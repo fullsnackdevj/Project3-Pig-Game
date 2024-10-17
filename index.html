@@ -8,12 +8,77 @@
     <title>Pig Game</title>
   </head>
   <body>
+    <section class="game-mechanics-section">
+      <h1 class="game-mechanics-title">Pig Game Mechanics:</h1>
+      <ul class="game-mechanics-list">
+        <li>
+          <strong>Objective:</strong> The first player to reach a total score of
+          <strong>50</strong> wins the game.
+        </li>
+        <li>
+          <strong>Players:</strong> There are two players who take turns rolling
+          a dice and accumulating points.
+        </li>
+        <li>
+          <strong>Rolling the Dice:</strong> Each player rolls a dice, and the
+          number they roll is added to their <strong>current score</strong>.
+        </li>
+        <li>
+          <strong>Holding the Score:</strong> Players can
+          <strong>hold</strong> their current score at any time during their
+          turn by pressing the "Hold" button. The current score is added to
+          their <strong>total score</strong>, and the turn switches to the next
+          player.
+        </li>
+        <li>
+          <strong>Rolling a 1:</strong> If a player rolls a <strong>1</strong>,
+          and they haven’t held their current score, their
+          <strong>current score resets to 0</strong>, and they lose all the
+          points accumulated during that turn.
+        </li>
+        <li>
+          <strong>Switching Turns:</strong> After pressing the
+          <strong>Hold</strong> button or rolling a <strong>1</strong>, the turn
+          passes to the next player.
+        </li>
+      </ul>
+      <div class="strategy-tip">
+        <p>
+          <strong>Strategy Tip:</strong> Be strategic! Hold your score before
+          taking too many risks. If you roll a <strong>1</strong> without
+          holding, your turn's progress resets to zero!
+        </p>
+      </div>
+
+      <div class="game-flow">
+        <h3>Game Flow:</h3>
+        <ol>
+          <li>
+            Player 1 rolls the dice, and the number is added to their current
+            score.
+          </li>
+          <li>Player 1 decides to either roll again or hold their score.</li>
+          <li>
+            If Player 1 holds, the current score is added to the total, and it
+            switches to Player 2.
+          </li>
+          <li>
+            If Player 1 rolls a 1, their current score resets to 0, and Player 2
+            takes over.
+          </li>
+          <li>
+            The game continues until one player reaches a total score of 50.
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <main>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">43</p>
         <div class="current">
-          <p class="current-label">Current</p>
+          <p class="current-label">Current Score</p>
           <p class="current-score" id="current--0">0</p>
         </div>
       </section>
@@ -21,7 +86,7 @@
         <h2 class="name" id="name--1">Player 2</h2>
         <p class="score" id="score--1">24</p>
         <div class="current">
-          <p class="current-label">Current</p>
+          <p class="current-label">Current Score</p>
           <p class="current-score" id="current--1">0</p>
         </div>
       </section>
