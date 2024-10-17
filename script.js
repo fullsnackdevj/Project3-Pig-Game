@@ -14,17 +14,36 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-// starting conditions
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add('hidden');
+let scores, currentScore, activePlayer, playing;
 
-const scores = [0, 0];
-let currentScore = 0; // cannot be inside the function btnRoll because it'll reset every click.
-let activePlayer = 0;
+const init = function () {
+  // starting conditions
 
-// state variable if players still playing
-let playing = true;
+  //   starting total scores
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+
+  //   starting current scores
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  // starting dice state which is hidden
+  diceEl.classList.add('hidden');
+
+  scores = [0, 0];
+  currentScore = 0; // cannot be inside the function btnRoll because it'll reset every click.
+  activePlayer = 0;
+
+  // state variable if players still playing
+  playing = true;
+
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+};
+
+init();
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -89,4 +108,11 @@ btnHold.addEventListener('click', function () {
 });
 
 //resetting the game
-btnNew.addEventListener('click', function () {});
+btnNew.addEventListener('click', () => {
+  if (!playing) {
+    init();
+  }
+});
+/*
+This way, the condition if (!playing) is checked when the button is clicked, and if playing is false, it will execute the init() function. Let me know if you encounter any other issues!
+*/
